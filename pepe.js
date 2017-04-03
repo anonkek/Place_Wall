@@ -92,28 +92,6 @@
                     y = image_data[j + 1],
                     color = image_data[j + 2],
                     currentColor = p.state[c.getIndexFromCoords(x, y)];
-                if(color != 10){
-                    continue;
-                }
-                if (currentColor != color) {
-                    console.log("set color for", x, y, "old", currentColor, "new", color);
-                    if(test){
-                        c.drawTileAt(x, y, colorsABGR[color]);
-                    }
-                    else{
-                        p.setColor(color);
-                        p.drawTile(x, y);
-                    }
-                    return;
-                }
-            }
-
-            for (var i = 0; i < image_data.length; i += 3) {
-                var j = Math.floor((Math.random() * image_data.length) / 3) * 3,
-                    x = image_data[j],
-                    y = image_data[j + 1],
-                    color = image_data[j + 2],
-                    currentColor = p.state[c.getIndexFromCoords(x, y)];
                 if(color == 10){
                     continue;
                 }
