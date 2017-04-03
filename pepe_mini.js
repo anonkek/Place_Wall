@@ -6,7 +6,7 @@
     console.log('Loaded /r/place Cooridination Script');
     $.ajaxSetup({ cache: false });
     var getData = function(action) {
-        $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe_mini.json', function(data) {
             action(data);
         });
     },
