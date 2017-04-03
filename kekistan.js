@@ -6,7 +6,7 @@
     console.log('Loaded /r/place Coordination Script');
     $.ajaxSetup({ cache: false });
     var getData = function(action) {
-        $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/kekistan.json', function(data) {
             action(data);
         });
     },
@@ -27,20 +27,6 @@
                     colorsABGR[i] = client.getPaletteColorABGR(i);
                 }
             }
-            for (var relY = 0; relY < options.image.length; relY++) {
-                var row = options.image[relY];
-                for (var relX = 0; relX < row.length; relX++) {
-                    color = options.colors[row[relX]] || -1;
-                    if (color < 0) {
-                        continue;
-                    }
-                    var absX = options.x + relX,
-                        absY = options.y + relY;
-                    image_data.push(absX);
-                    image_data.push(absY);
-                    image_data.push(color);
-                }
-            }
 
             for (var i = 0; i < image_data.length; i += 3) {
                 var j = Math.floor((Math.random() * image_data.length) / 3) * 3,
@@ -48,9 +34,6 @@
                     y = image_data[j + 1],
                     color = image_data[j + 2],
                     currentColor = p.state[c.getIndexFromCoords(x, y)];
-                if(color == 10){
-                    continue;
-                }
                 if (currentColor != color) {
                     console.log("set color for", x, y, "old", currentColor, "new", color);
                     if(test){

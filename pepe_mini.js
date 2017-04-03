@@ -3,7 +3,7 @@
  */
 (function() {
     'use strict';
-    console.log('Loaded /r/place Cooridination Script');
+    console.log('Loaded /r/place Coordination Script');
     $.ajaxSetup({ cache: false });
     var getData = function(action) {
         $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe_mini.json', function(data) {
