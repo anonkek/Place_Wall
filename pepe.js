@@ -5,15 +5,28 @@
     'use strict';
     console.log('Loaded /r/place Cooridination Script');
     $.ajaxSetup({ cache: false });
+    var getData = function(action) {
+        $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe.json', function(data) {
+            action(data);
+        });
+    },
+        test = false;
     r.placeModule("placePaintBot", function(loader) {
         var c = loader("canvasse"),
+            client = loader("client"),
             color;
         var draw = function(options) {
             var p = r.place;
-            if (p.getCooldownTimeRemaining() > 200) {
+            if (!test && p.getCooldownTimeRemaining() > 200) {
                 return;
             }
-            var image_data = [];
+            var image_data = [],
+                colorsABGR = [];
+            if(test){
+                for(var i = 0; i < client.palette.length; i++){
+                    colorsABGR[i] = client.getPaletteColorABGR(i);
+                }
+            }
             for (var relY = 0; relY < options.image.length; relY++) {
                 var row = options.image[relY];
                 for (var relX = 0; relX < row.length; relX++) {
@@ -37,21 +50,20 @@
                     currentColor = p.state[c.getIndexFromCoords(x, y)];
                 if (currentColor != color) {
                     console.log("set color for", x, y, "old", currentColor, "new", color);
-                    p.setColor(color);
-                    p.drawTile(x, y);
+                    if(test){
+                        c.drawTileAt(x, y, colorsABGR[color]);
+                    }
+                    else{
+                        p.setColor(color);
+                        p.drawTile(x, y);
+                    }
                     return;
                 }
             }
         };
 
-        var getData = function(action) {
-            $.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/pepe.json', function(data) {
-                action(data);
-            });
-        };
-
         setInterval(function() {
             getData(draw);
-        }, 1500);
+        }, test ? 10 : 1500);
     });
 })();
