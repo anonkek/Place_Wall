@@ -70,6 +70,9 @@
                     y = image_data[j + 1],
                     color = image_data[j + 2],
                     currentColor = p.state[c.getIndexFromCoords(x, y)];
+                if(color == 10){
+                    continue;
+                }
                 if (currentColor != color) {
                     console.log("set color for", x, y, "old", currentColor, "new", color);
                     if(test){
