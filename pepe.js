@@ -48,50 +48,6 @@
                     y = image_data[j + 1],
                     color = image_data[j + 2],
                     currentColor = p.state[c.getIndexFromCoords(x, y)];
-
-                if(x >= 575 && x <= 581 && y >= 499 && y <= 505){
-                    if (currentColor != color) {
-                        console.log("set color for", x, y, "old", currentColor, "new", color);
-                        if(test){
-                            c.drawTileAt(x, y, colorsABGR[color]);
-                        }
-                        else{
-                            p.setColor(color);
-                            p.drawTile(x, y);
-                        }
-                        return;
-                    }
-                }
-            }
-
-            for (var i = 0; i < image_data.length; i += 3) {
-                var j = Math.floor((Math.random() * image_data.length) / 3) * 3,
-                    x = image_data[j],
-                    y = image_data[j + 1],
-                    color = image_data[j + 2],
-                    currentColor = p.state[c.getIndexFromCoords(x, y)];
-                if(color != 10){
-                    continue;
-                }
-                if (currentColor != color) {
-                    console.log("set color for", x, y, "old", currentColor, "new", color);
-                    if(test){
-                        c.drawTileAt(x, y, colorsABGR[color]);
-                    }
-                    else{
-                        p.setColor(color);
-                        p.drawTile(x, y);
-                    }
-                    return;
-                }
-            }
-
-            for (var i = 0; i < image_data.length; i += 3) {
-                var j = Math.floor((Math.random() * image_data.length) / 3) * 3,
-                    x = image_data[j],
-                    y = image_data[j + 1],
-                    color = image_data[j + 2],
-                    currentColor = p.state[c.getIndexFromCoords(x, y)];
                 if(color == 10){
                     continue;
                 }
@@ -111,6 +67,6 @@
 
         setInterval(function() {
             getData(draw);
-        }, test ? 10 : 1500);
+        }, test ? 100 : 1500);
     });
 })();
