@@ -33,8 +33,7 @@
 					}
 
 					//p.panX = options.x;
-					//p.panY = options.y;
-
+					//p.panY = options.y;`
 					for (var i = 0; i < image_data.length; i += 3) {
 						var j = Math.floor((Math.random() * image_data.length) / 3) * 3;
 						var x = image_data[j + 0];
@@ -55,7 +54,7 @@
 				var getData = function(action) {
 					
 
-					$.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/sync.json', function(data) {
+				$.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/sync.json', function(data) {
 
 							// Removed the time delay so that it starts drawing immediately
 //             if (!data.time) {
