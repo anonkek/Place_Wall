@@ -3,14 +3,14 @@
   "x": 886,
   "y": 553,
   "image": [
-	  "NNGGNGG",
-	  "GGGGGGG",
-	  "GGW#GW#",
-	  "GGGGGGG",
-	  "BGRRRRR",
-	  "BGGGGGG",
-	  "BBBBBBG",
-	  ".G...G."
+	  ".GG..GG.",
+	  "GGGGGGGG",
+	  "GGGW#GW#",
+	  "GGGGGGGG",
+	  "GGGRRRRR",
+	  "GGGGGGGG",
+	  "BGGGGGGG",
+	  "BBBBBBBG"
   ],
   "colors": {
 	"W": 0,
