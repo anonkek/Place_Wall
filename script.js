@@ -55,7 +55,7 @@
 				var getData = function(action) {
 					
 
-					$.getJSON('https://raw.githubusercontent.com/anonkek/place/master/sync.json', function(data) {
+					$.getJSON('https://raw.githubusercontent.com/anonkek/Place_Wall/master/sync.json', function(data) {
 
 							// Removed the time delay so that it starts drawing immediately
 //             if (!data.time) {
