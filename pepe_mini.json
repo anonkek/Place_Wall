@@ -1,0 +1,21 @@
+{
+  "time": "Apr 02 2017 15:00:00 GMT-0400 (EDT)",
+  "x": 579,
+  "y": 487,
+  "image": [
+	  "WGGGWGG",
+	  "GGGGGGG",
+	  "GGW#GW#",
+	  "GGGGGGG",
+	  "BGRRRRR",
+	  "BGGGGGG",
+	  "BBBBBBG"
+  ],
+  "colors": {
+    "W": 0,
+    "#": 3,
+    "R": 5,
+    "G": 10,
+    "B": 13
+  }
+}
